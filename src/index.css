@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+body {
+    max-width: 1320px;
+    margin: 0 auto;
+    background: rgb(250, 250, 250);
+}
