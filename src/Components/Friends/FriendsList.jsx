@@ -1,4 +1,4 @@
-import React, { use } from 'react'
+
 import { Link } from 'react-router-dom';
 
 function FriendsList({ friends }) {

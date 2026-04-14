@@ -14,7 +14,7 @@ const routers = createBrowserRouter([
             {
                 index: true,
                 element: <HomePage />,
-                loader:()=> fetch("/friends.json")
+                loader: () => fetch("/friends.json")
             },
             {
                 path: "timeline",
@@ -25,8 +25,9 @@ const routers = createBrowserRouter([
                 element: <StatsPage />
             },
             {
-                path: "friendDetails",
-                element: <FriendDetailsPage />
+                path: "friendDetails/:friendId",
+                element: <FriendDetailsPage />,
+                loader: () => fetch("/friends.json")
             },
         ]
     },
