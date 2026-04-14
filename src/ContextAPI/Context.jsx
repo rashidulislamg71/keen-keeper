@@ -5,11 +5,16 @@ const Context = createContext();
 export { Context };
 
 
-const ContextProvider = ({ children }) => {
+const friendsDataFetch = async () =>{
+    const res = await fetch("/friends.json");
+    return res.json();
+}
 
+const ContextProvider = ({ children }) => {
+const friendsPromise = friendsDataFetch()
 
     const data = {
-     
+     friendsPromise
     }
     return (
         <Context.Provider value={data}>

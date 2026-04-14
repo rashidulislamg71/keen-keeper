@@ -3,7 +3,6 @@ import React, { use } from 'react'
 function FriendsList({ friendsPromise }) {
 
     const friends = use(friendsPromise);
-    console.log(friends);
 
     const statueStyle = (status) => {
         if (status === "Overdue") {

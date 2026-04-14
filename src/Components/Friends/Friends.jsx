@@ -1,15 +1,9 @@
-import React, { Suspense } from 'react'
+import React, { Suspense, useContext } from 'react'
 import FriendsList from './FriendsList'
-
-const friendsData = async () => {
-    const response = await fetch('/friends.json')
-    const data = await response.json()
-    return data
-}
+import { Context } from '../../ContextAPI/Context'
 
 function Friends() {
-
-    const friendsPromise = friendsData();
+    const {friendsPromise} = useContext(Context)
 
     return (
         <div className='py-10 md:pb-16 px-4 md:px-16'>
