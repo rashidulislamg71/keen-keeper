@@ -11,7 +11,7 @@ function Footer() {
         <div className='bg-[#244d3f] text-center pt-10 px-4 md:px-16 lg:px-23 md:pt-16 '>
 
             <div>
-                <div className='mb-10 flex flex-col gap-5 justify-center items-center' >
+                <div className='mb-7 md:mb-10 flex flex-col gap-3 md:gap-5 justify-center items-center' >
                     <h1 className='text-4xl text-white'>KeenKeeper</h1>
                     <p className='text-gray-400'>Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>
                     <div>
@@ -34,18 +34,14 @@ function Footer() {
                     </div>
                 </div>
                 <div className='border-t border-gray-500'>
-                    <div className='py-5 flex justify-between items-center'>
-
+                    <div className='py-5 flex flex-col-reverse gap-5 md:flex justify-between items-center'>
                         <p className='text-gray-400'>{`${new Date().getFullYear()} KeenKeeper. All rights reserved.`}</p>
-
                         <ul className='flex gap-5 md:gap-8 text-gray-400'>
                             <Link className='hover:text-white'>Privacy Policy</Link>
                             <Link className='hover:text-white'>Terms of Service</Link>
                             <Link className='hover:text-white'>Cookies</Link>
                         </ul>
-
                     </div>
-
                 </div>
             </div>
         </div>
