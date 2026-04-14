@@ -3,6 +3,9 @@ import { CiClock2 } from 'react-icons/ci';
 import { FaFileArchive } from 'react-icons/fa';
 import { MdDelete } from 'react-icons/md';
 import { useLoaderData, useParams } from 'react-router-dom';
+import DashboardCard from '../Components/DashboardCard/DashboardCard';
+import RelationshipGoal from '../Components/FriendDetailsPageComponents/RelationshipGoal';
+import QuickCheck from '../Components/FriendDetailsPageComponents/QuickCheckIn/QuicCheck';
 
 function FriendDetailsPage() {
     const { friendId } = useParams();
@@ -25,69 +28,86 @@ function FriendDetailsPage() {
 
     const dateFormat = (dateString) => {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
-      return new Date(dateString).toLocaleDateString(undefined,options);
-   
+        return new Date(dateString).toLocaleDateString(undefined, options);
     }
 
     return (
-        <div className='px-4 md:px-20 py-10 md:py-16'>
 
-            <div className='grid grid-cols-3 gap-4'>
-                <div className='col-span-1'>
-                    <div className='hover:shadow-2xl transition-all duration-300  text-center m-auto h-auto w-auto flex flex-col justify-center items-center gap-2 bg-white shadow p-5 rounded ' >
-                        <img className='rounded-full w-15 h-15 border border-gray-300 p-1' src={picture} alt={name} />
-                        <h4 className='font-bold '>{name}</h4>
-                        <p className='text-gray-500 text-[12px] '>{days_since_contact}d ago</p>
-                        <div className='flex gap-2'>
+        <div className='px-4 sm:px-6 md:px-12 lg:px-20 py-8 md:py-12 lg:py-16'>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-6'>
+                {/* LEFT SIDE */}
+                <div className='lg:col-span-1'>
+                    <div className='hover:shadow-2xl transition-all duration-300 text-center flex flex-col items-center gap-3 bg-white shadow p-5 rounded-lg'>
+                        <img
+                            className='rounded-full w-20 h-20 border border-gray-300 p-1'
+                            src={picture}
+                            alt={name}
+                        />
+                        <h4 className='font-bold text-lg'>{name}</h4>
+                        <p className='text-gray-500 text-sm'>
+                            {days_since_contact}d ago
+                        </p>
+                        <div className='flex flex-wrap justify-center gap-2'>
                             {
-                                tags.map(tag => (
-                                    <span className='text-[11px] bg-green-200 text-green-800 px-2 
-                                    rounded-full' key={tag}>{tag.toUpperCase()}</span>
+                                tags?.map(tag => (
+                                    <span
+                                        className='text-xs bg-green-200 text-green-800 px-2 py-1 rounded-full'
+                                        key={tag}
+                                    >
+                                        {tag.toUpperCase()}
+                                    </span>
                                 ))
                             }
                         </div>
-                        <p className={`w-fit rounded-full text-white px-2
-                                 text-[12px] ${statueStyle(status)}`} >
+
+                        <p className={`w-fit rounded-full text-white px-3 py-1 text-xs ${statueStyle(status)}`}>
                             {status}
                         </p>
-                        <p>{bio}</p>
-                        <p>{email}</p>
+                        <p className='text-sm text-gray-600 text-center'>{bio}</p>
+                        <p className='text-xs text-gray-500 break-all'>{email}</p>
                     </div>
-                    {/* buttons  */}
-                    <div className='space-y-2 mt-5'>
-                        <button className="btn w-full shadow bg-white text-black border-[#e5e5e5]">
-                            <CiClock2 />
-                            Snooze 2 Weeks
-                        </button>
-                        <button className="btn w-full shadow bg-white text-black border-[#e5e5e5]">
-                            <FaFileArchive />
-                            Archive
-                        </button>
-                        <button className="btn w-full text-red-500 shadow bg-white  border-[#e5e5e5]">
-                            <MdDelete />
-                            Delete
-                        </button>
 
+                    {/* Buttons */}
+                    <div className='space-y-2 mt-5'>
+                        <button className="btn w-full shadow bg-white text-black border hover:bg-gray-100">
+                            <CiClock2 /> Snooze 2 Weeks
+                        </button>
+                        <button className="btn w-full shadow bg-white text-black border hover:bg-gray-100">
+                            <FaFileArchive /> Archive
+                        </button>
+                        <button className="btn w-full text-red-500 shadow bg-white border hover:bg-red-50">
+                            <MdDelete /> Delete
+                        </button>
                     </div>
+
                 </div>
-                <div className='col-span-2'>
-                    <div className='grid grid-cols-3 gap-4'>
-                        <div className='text-center bg-white shadow p-5 rounded '>
-                            <h3 className='text-xl font-bold text-gray-700'>{days_since_contact} </h3>
-                            <p className='text-gray-600' >days since contact</p>
-                        </div>
-                        <div className='text-center bg-white shadow p-5 rounded '>
-                            <h3 className='text-xl font-bold text-gray-700'>{goal} </h3>
-                            <p className='text-gray-600' >Goal(Days)</p>
-                        </div>
-                        <div className='text-center bg-white shadow p-5 rounded '>
-                            <h3 className='text-xl font-bold text-gray-700'>{dateFormat(next_due_date)} </h3>
-                            <p className='text-gray-600' >Next Due</p>
-                        </div>
+
+                {/* RIGHT SIDE */}
+                <div className='lg:col-span-2'>
+
+                    {/* Dashboard Cards */}
+                    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
+                        <DashboardCard number={days_since_contact} title="Days Since Contact" />
+                        <DashboardCard number={goal} title="Goal (Days)" />
+                        <DashboardCard title="Next Due" number={dateFormat(next_due_date)} />
                     </div>
+
+                    {/* Relationship Goal */}
+                    <div className='mt-6'>
+                        <RelationshipGoal />
+                    </div>
+
+                    {/* Quick Check */}
+                    <div className='mt-6'>
+                        <QuickCheck />
+                    </div>
+
                 </div>
+
             </div>
+
         </div>
+
     )
 }
 
