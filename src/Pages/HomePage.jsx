@@ -16,7 +16,8 @@ const HomePage = () => {
             </section>
 
             {/* dashboard cards  */}
-            <section className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-6 px-4 md:px-8 mt-5 border-b border-gray-300 pb-10'>
+            <section className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 
+             gap-2 md:gap-6 px-4 lg:px-23 md:px-16 mt-5 border-b border-gray-300 pb-10'>
                 <DashboardCard number={5} title={'Total Friends'} />
                 <DashboardCard number={3} title={'On Track'} />
                 <DashboardCard number={6} title={'Need Attention'} />
@@ -25,6 +26,7 @@ const HomePage = () => {
 
             {/* friends list  */}
             <section>
+                
                 <Friends />
             </section>
         </div>
