@@ -5,6 +5,7 @@ import NotFound from "../Pages/NotFound";
 import Root from "../Components/Root/Root";
 import TimelinePage from "../Pages/TimelinePage";
 import StatsPage from "../Pages/StatsPage";
+import FriendDetailsPage from "../Pages/FriendDetailsPage";
 
 const routers = createBrowserRouter([
     {
@@ -12,15 +13,20 @@ const routers = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <HomePage />
+                element: <HomePage />,
+                loader:()=> fetch("/friends.json")
             },
             {
                 path: "timeline",
                 element: <TimelinePage />
             },
             {
-             path: "stats",
+                path: "stats",
                 element: <StatsPage />
+            },
+            {
+                path: "friendDetails",
+                element: <FriendDetailsPage />
             },
         ]
     },
