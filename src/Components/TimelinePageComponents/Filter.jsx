@@ -5,8 +5,6 @@ import { Context } from '../../ContextAPI/Context'
 
 function Filter() {
     const { filterTimeline, handleTimelineFilter } = useContext(Context);
-
-
     const handleSelect = (filterType) => {
         handleTimelineFilter(filterType);
         const elem = document.activeElement;
