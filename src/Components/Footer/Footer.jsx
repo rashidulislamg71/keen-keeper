@@ -34,8 +34,8 @@ function Footer() {
                     </div>
                 </div>
                 <div className='border-t border-gray-500'>
-                    <div className='py-5 flex flex-col-reverse gap-5 md:flex justify-between items-center'>
-                        <p className='text-gray-400'>{`${new Date().getFullYear()} KeenKeeper. All rights reserved.`}</p>
+                    <div className='py-5 flex flex-col-reverse gap-5 md:flex-row justify-between items-center'>
+                        <p className='text-gray-400'> &copy; {`${new Date().getFullYear()} KeenKeeper. All rights reserved.`}</p>
                         <ul className='flex gap-5 md:gap-8 text-gray-400'>
                             <Link className='hover:text-white'>Privacy Policy</Link>
                             <Link className='hover:text-white'>Terms of Service</Link>

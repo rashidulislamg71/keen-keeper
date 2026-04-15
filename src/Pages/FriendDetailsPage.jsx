@@ -6,13 +6,16 @@ import { useLoaderData, useParams } from 'react-router-dom';
 import DashboardCard from '../Components/DashboardCard/DashboardCard';
 import RelationshipGoal from '../Components/FriendDetailsPageComponents/RelationshipGoal';
 import QuickCheck from '../Components/FriendDetailsPageComponents/QuickCheckIn/QuicCheck';
+import { dateFormat } from '../utils/DateFormat';
+import { findData } from '../utils/DataFind';
 
 function FriendDetailsPage() {
     const { friendId } = useParams();
     const friends = useLoaderData();
-    const friend = friends.find(f => f.id === parseInt(friendId));
-
-    const { name, picture, days_since_contact, tags, status, bio, email, next_due_date, goal } = friend || {};
+// find data by id
+    const friend = findData(friends, friendId);
+    
+    const {id, name, picture, days_since_contact, tags, status, bio, email, next_due_date, goal } = friend || {};
 
     const statueStyle = (status) => {
         if (status === "Overdue") {
@@ -24,11 +27,6 @@ function FriendDetailsPage() {
         else if (status === "On-Track") {
             return "bg-[#244d3f] ";
         }
-    }
-
-    const dateFormat = (dateString) => {
-        const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        return new Date(dateString).toLocaleDateString(undefined, options);
     }
 
     return (
@@ -85,12 +83,12 @@ function FriendDetailsPage() {
                 {/* RIGHT SIDE */}
                 <div className='lg:col-span-2'>
 
-                    {/* Dashboard Cards */}
+                    {/* Stats Cards */}
                     <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
                         <DashboardCard number={days_since_contact} title="Days Since Contact" />
                         <DashboardCard number={goal} title="Goal (Days)" />
                         <DashboardCard title="Next Due" number={dateFormat(next_due_date)} />
-                    </div>
+                    </div> 
 
                     {/* Relationship Goal */}
                     <div className='mt-6'>
@@ -99,7 +97,7 @@ function FriendDetailsPage() {
 
                     {/* Quick Check */}
                     <div className='mt-6'>
-                        <QuickCheck />
+                        <QuickCheck friendId = {id} />
                     </div>
 
                 </div>
