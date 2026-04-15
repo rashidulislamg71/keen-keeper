@@ -32,11 +32,11 @@ function TimelinePage() {
       <div>
         {
           timeline.length > 0 ?
-            <ul>
+            <ul className='min-h-70'>
               <TimelineItems />
             </ul>
             :
-            <div className="flex flex-col items-center justify-center h-60 text-center space-y-3 shadow border border-gray-300 rounded">
+            <div className="flex flex-col items-center justify-center h-100 md:h-70 text-center space-y-3 shadow border border-gray-300 rounded">
 
               <div className="text-5xl"><GiEmptyWoodBucketHandle /></div>
 

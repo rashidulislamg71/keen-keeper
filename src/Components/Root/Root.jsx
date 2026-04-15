@@ -1,6 +1,6 @@
 import React from 'react'
 import NavBar from '../NavBar/NavBar'
-import { Outlet, useNavigation } from 'react-router-dom'
+import { Outlet, ScrollRestoration, useNavigation } from 'react-router-dom'
 import Footer from '../Footer/Footer'
 import { HashLoader } from 'react-spinners';
 
@@ -10,7 +10,7 @@ function Root() {
     return (
         <div>
             <NavBar />
-
+            <ScrollRestoration />
             <main className="flex-wrap">
                 {navigation.state === "loading" ? (
                     <div className="flex justify-center items-center h-[90vh] ">
@@ -20,6 +20,7 @@ function Root() {
                         />
                     </div>
                 ) : (
+
                     <Outlet />
                 )}
             </main>
