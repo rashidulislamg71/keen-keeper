@@ -2,12 +2,8 @@ import React, { useContext, useMemo } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 import { Context } from '../../ContextAPI/Context';
 
-
-
 function CustomPieChart() {
-
     const { timelineStats } = useContext(Context);
-    console.log(timelineStats)
 
     const chartData = useMemo(() => {
         if (!timelineStats) return [];
