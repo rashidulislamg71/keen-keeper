@@ -9,7 +9,7 @@ function TimelineItems() {
     const friendsData = useLoaderData();
 
     return (
-        <div>
+        <div className='md:mt-10 mt-5'>
             {
                 timeline.map(item => {
                     const friend = findData(friendsData, item.friendId);

@@ -21,11 +21,11 @@ function TimelineItem({ timeline, friendName }) {
     const typeFormat = type.charAt(0).toUpperCase() + type.slice(1);
 
     return (
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2  p-3 rounded shadow mb-4 border border-gray-300">
             {icon}
             <div>
-                <p>{typeFormat} with {friendName || "Unknown"}</p>
-                <p>{timestamp}</p>
+                <p className='font-semibold'>{typeFormat} <span className='text-gray-500'>with {friendName || "Unknown"}</span></p>
+                <p className='text-[14px] text-gray-500 '>{timestamp}</p>
             </div>
         </div>
     );
