@@ -1,9 +1,14 @@
 
-import React from 'react'
+import React, { useContext } from 'react'
 import { IoVideocam } from 'react-icons/io5';
 import { MdOutlinePhonePaused, MdOutlineTextsms } from 'react-icons/md';
+import { Context } from '../../../ContextAPI/Context';
 
 function TimelineItem({ timeline, friendName }) {
+
+    const {filterTimeline} = useContext(Context);
+    console.log(filterTimeline)
+
     const { type, timestamp } = timeline;
 
     let icon;

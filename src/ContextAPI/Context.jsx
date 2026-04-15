@@ -7,7 +7,7 @@ export { Context };
 
 const ContextProvider = ({ children }) => {
     const [timeline, setTimeline] = useState([]);
-    const [filteredTimeline, setFilteredTimeline] = useState([]);
+    const [filterTimeline, setFilterTimeline] = useState("all");
 
     const handleTimelineUpdate = (id, text) => {
         const newEntry = {
@@ -21,13 +21,21 @@ const ContextProvider = ({ children }) => {
     }
 
 
+  const handleTimelineFilter = (type) => {
+    setFilterTimeline(type);
+};
+
+
+
+
 
     const data = {
         timeline,
         setTimeline,
-        filteredTimeline,
-        setFilteredTimeline,
-        handleTimelineUpdate
+        filterTimeline,
+        setFilterTimeline,
+        handleTimelineUpdate,
+        handleTimelineFilter
     }
     return (
         <Context.Provider value={data}>
