@@ -13,7 +13,7 @@ function Root() {
 
             <main className="flex-wrap">
                 {navigation.state === "loading" ? (
-                    <div className="flex justify-center items-center ">
+                    <div className="flex justify-center items-center h-[90vh] ">
                         <HashLoader
                             color="rgb(20, 102, 73)"
                             size={30}

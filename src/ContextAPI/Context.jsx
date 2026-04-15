@@ -25,6 +25,7 @@ const ContextProvider = ({ children }) => {
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
+            closeButton: false,
             theme: "light",
             transition: Bounce,
         })
@@ -37,8 +38,10 @@ const ContextProvider = ({ children }) => {
         setFilterTimeline(type);
     };
 
-
-
+    const timelineStats = timeline.reduce((acc, item) => {
+        acc[item.type] = (acc[item.type] || 0) + 1;
+        return acc;
+    }, {});
 
 
     const data = {
@@ -47,7 +50,8 @@ const ContextProvider = ({ children }) => {
         filterTimeline,
         setFilterTimeline,
         handleTimelineUpdate,
-        handleTimelineFilter
+        handleTimelineFilter,
+        timelineStats
     }
     return (
         <Context.Provider value={data}>
