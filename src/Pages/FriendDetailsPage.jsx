@@ -12,10 +12,10 @@ import { findData } from '../utils/DataFind';
 function FriendDetailsPage() {
     const { friendId } = useParams();
     const friends = useLoaderData();
-// find data by id
+    // find data by id
     const friend = findData(friends, friendId);
-    
-    const {id, name, picture, days_since_contact, tags, status, bio, email, next_due_date, goal } = friend || {};
+
+    const { id, name, picture, days_since_contact, tags, status, bio, email, next_due_date, goal } = friend || {};
 
     const statueStyle = (status) => {
         if (status === "Overdue") {
@@ -85,7 +85,7 @@ function FriendDetailsPage() {
                         <DashboardCard number={days_since_contact} title="Days Since Contact" />
                         <DashboardCard number={goal} title="Goal (Days)" />
                         <DashboardCard title="Next Due" number={dateFormat(next_due_date)} />
-                    </div> 
+                    </div>
 
                     {/* Relationship Goal */}
                     <div className='mt-6'>
@@ -94,7 +94,7 @@ function FriendDetailsPage() {
 
                     {/* Quick Check */}
                     <div className='mt-6'>
-                        <QuickCheck friendId = {id} />
+                        <QuickCheck friendId={id} />
                     </div>
 
                 </div>

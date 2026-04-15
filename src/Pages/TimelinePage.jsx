@@ -6,6 +6,7 @@ import Filter from '../Components/TimelinePageComponents/Filter'
 import TimelineItems from '../Components/TimelinePageComponents/TimelineItem/TimelineItems'
 
 function TimelinePage() {
+  
   return (
     <div className='px-4 py-10 md:px-20 md:py-16 md:max-w-5xl m-auto'>
       <h1 className='text-2xl font-bold '>Timeline </h1>
