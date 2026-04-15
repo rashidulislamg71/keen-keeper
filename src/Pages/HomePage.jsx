@@ -7,8 +7,6 @@ import HeroSection from '../Components/HeroSection/HeroSection';
 import { Context } from '../ContextAPI/Context';
 
 const HomePage = () => {
-
-
     return (
         <div>
             <section>
@@ -26,7 +24,6 @@ const HomePage = () => {
 
             {/* friends list  */}
             <section>
-                
                 <Friends />
             </section>
         </div>

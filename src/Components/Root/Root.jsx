@@ -7,7 +7,6 @@ import { HashLoader } from 'react-spinners';
 function Root() {
     const navigation = useNavigation();
 
-
     return (
         <div>
             <NavBar />

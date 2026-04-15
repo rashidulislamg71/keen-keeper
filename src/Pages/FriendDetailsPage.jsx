@@ -42,9 +42,6 @@ function FriendDetailsPage() {
                             alt={name}
                         />
                         <h4 className='font-bold text-lg'>{name}</h4>
-                        <p className='text-gray-500 text-sm'>
-                            {days_since_contact}d ago
-                        </p>
                         <div className='flex flex-wrap justify-center gap-2'>
                             {
                                 tags?.map(tag => (
@@ -66,14 +63,14 @@ function FriendDetailsPage() {
                     </div>
 
                     {/* Buttons */}
-                    <div className='space-y-2 mt-5'>
-                        <button className="btn w-full shadow bg-white text-black border hover:bg-gray-100">
+                    <div className='space-y-2 mt-5 flex justify-around md:flex-col '>
+                        <button className="btn w-auto md:w-full shadow bg-white text-black border hover:bg-gray-100">
                             <CiClock2 /> Snooze 2 Weeks
                         </button>
-                        <button className="btn w-full shadow bg-white text-black border hover:bg-gray-100">
+                        <button className="btn w-auto md:w-full shadow bg-white text-black border hover:bg-gray-100">
                             <FaFileArchive /> Archive
                         </button>
-                        <button className="btn w-full text-red-500 shadow bg-white border hover:bg-red-50">
+                        <button className="btn w-auto md:w-full text-red-500 shadow bg-white border hover:bg-red-50">
                             <MdDelete /> Delete
                         </button>
                     </div>

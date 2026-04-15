@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 import { currentDay, dateFormat } from "../utils/DateFormat";
+import { toast, Bounce } from "react-toastify";
 
 
 const Context = createContext();
@@ -15,15 +16,26 @@ const ContextProvider = ({ children }) => {
             friendId: id,
             type: text,
             timestamp: currentDay() + ", " + dateFormat(new Date().toISOString())
+
         };
+        toast.success(`You success to ${text} contact! `, {
+            position: "top-center",
+            autoClose: 100,
+            hideProgressBar: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+        })
 
         setTimeline(prev => [newEntry, ...prev]);
     }
 
 
-  const handleTimelineFilter = (type) => {
-    setFilterTimeline(type);
-};
+    const handleTimelineFilter = (type) => {
+        setFilterTimeline(type);
+    };
 
 
 

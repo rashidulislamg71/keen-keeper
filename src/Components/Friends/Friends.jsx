@@ -8,9 +8,7 @@ function Friends() {
     return (
         <div className='py-10 md:pb-16 px-4 md:px-16'>
             <h1 className='font-bold text-2xl mb-10 text-center'>Your Friends</h1>
-
             <FriendsList friends={friends} />
-
         </div>
     )
 }
