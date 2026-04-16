@@ -8,8 +8,8 @@ import LinkComponent from './LinkComponents';
 function NavBar() {
     return (
         <div>
-            <nav className='flex items-center justify-between px-4 py-2 shadow-2xl md:px-8 md:py-4'>
-                <div className='text-[20px] font-bold md:text-2xl'>
+            <nav className='flex items-center justify-between px-4 py-2 shadow md:px-8 md:py-4'>
+                <div className='text-[20px] font-bold md:text-3xl'>
                     <Link to={`/`}>
                         <span className='text-[#02af75]'>Keen</span>
                         <span className='text-[#244d3f] '>Keeper</span>
