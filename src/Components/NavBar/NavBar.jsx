@@ -8,8 +8,8 @@ import LinkComponent from './LinkComponents';
 function NavBar() {
     return (
         <div>
-            <nav className='flex items-center justify-between px-4 py-2 shadow md:px-8 md:py-4'>
-                <div className='text-[20px] font-bold md:text-3xl'>
+            <nav className='flex flex-wrap items-center justify-between px-2 py-4 shadow md:px-8 md:py-4'>
+                <div className='text-2xl font-bold md:text-3xl'>
                     <Link to={`/`}>
                         <span className='text-[#02af75]'>Keen</span>
                         <span className='text-[#244d3f] '>Keeper</span>
@@ -17,15 +17,15 @@ function NavBar() {
                 </div>
                 <div className={`flex justify-center items-center gap-3 md:gap-10`}>
                     <LinkComponent path={"/"}>
-                        <FaHome className='text-sm' /> Home
+                        <FaHome className='text-sm hidden md:block' /> Home
                     </LinkComponent>
 
                     <LinkComponent path={"/timeline"}>
-                        <CiClock2 className='text-sm ' /> Timeline
+                        <CiClock2 className='text-sm  hidden md:block' /> Timeline
                     </LinkComponent>
 
                     <LinkComponent path={"/stats"}>
-                        <TfiStatsUp className='text-sm' /> Stats
+                        <TfiStatsUp className='text-sm hidden md:block' /> Stats
                     </LinkComponent>
 
 
