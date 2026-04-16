@@ -31,11 +31,11 @@ function FriendDetailsPage() {
 
     return (
 
-        <div className='px-4 sm:px-6 md:px-12 lg:px-20 py-8 md:py-12 lg:py-16'>
+        <div className='px-2 sm:px-6 md:px-12 lg:px-20 py-8 md:py-12 lg:py-16'>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-6'>
                 {/* LEFT SIDE */}
                 <div className='lg:col-span-1'>
-                    <div className='hover:shadow-2xl transition-all duration-300 text-center flex flex-col items-center gap-3 bg-white shadow p-5 rounded-lg'>
+                    <div className='text-center flex flex-col items-center gap-3 bg-white shadow p-5 rounded-lg'>
                         <img
                             className='rounded-full w-20 h-20 border border-gray-300 p-1'
                             src={picture}
@@ -63,14 +63,14 @@ function FriendDetailsPage() {
                     </div>
 
                     {/* Buttons */}
-                    <div className='space-y-2 mt-5 flex justify-around md:flex-col '>
-                        <button className="btn w-auto md:w-full shadow bg-white text-black border hover:bg-gray-100">
+                    <div className='space-y-1 mt-5 flex justify-around md:flex-col '>
+                        <button className="btn px-2 w-auto md:w-full shadow bg-white text-black border hover:bg-gray-100">
                             <CiClock2 /> Snooze 2 Weeks
                         </button>
-                        <button className="btn w-auto md:w-full shadow bg-white text-black border hover:bg-gray-100">
+                        <button className="btn px-3 w-auto md:w-full shadow bg-white text-black border hover:bg-gray-100">
                             <FaFileArchive /> Archive
                         </button>
-                        <button className="btn w-auto md:w-full text-red-500 shadow bg-white border hover:bg-red-50">
+                        <button className="btn px-3 w-auto md:w-full text-red-500 shadow bg-white border hover:bg-red-50">
                             <MdDelete /> Delete
                         </button>
                     </div>
