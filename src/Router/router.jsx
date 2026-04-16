@@ -7,7 +7,7 @@ import TimelinePage from "../Pages/TimelinePage";
 import StatsPage from "../Pages/StatsPage";
 import FriendDetailsPage from "../Pages/FriendDetailsPage";
 
-const routers = createBrowserRouter([
+const routes = createBrowserRouter([
     {
         element: <Root />,
         children: [
@@ -38,4 +38,4 @@ const routers = createBrowserRouter([
     }
 ]);
 
-export default routers;
+export default routes;
