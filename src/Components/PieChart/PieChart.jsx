@@ -22,7 +22,6 @@ function CustomPieChart() {
             ];
         }
         return data;
-
     }, [timelineStats]);
 
     return (
@@ -60,7 +59,7 @@ function CustomPieChart() {
                         ></div>
 
                         <span className="text-sm font-medium text-gray-700">
-                            {item.name}: <span className="text-gray-500">{item.value}</span>
+                            {item.name} 
                         </span>
                     </div>
                 ))}

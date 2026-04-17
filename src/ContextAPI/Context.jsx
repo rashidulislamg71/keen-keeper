@@ -33,16 +33,19 @@ const ContextProvider = ({ children }) => {
         setTimeline(prev => [newEntry, ...prev]);
     }
 
-
     const handleTimelineFilter = (type) => {
         setFilterTimeline(type);
     };
+
+    const filteredTimeline = timeline.filter(item => {
+        if (filterTimeline === "all") return true;
+        return item.type === filterTimeline;
+    });
 
     const timelineStats = timeline.reduce((acc, item) => {
         acc[item.type] = (acc[item.type] || 0) + 1;
         return acc;
     }, {});
-
 
     const data = {
         timeline,
@@ -51,7 +54,8 @@ const ContextProvider = ({ children }) => {
         setFilterTimeline,
         handleTimelineUpdate,
         handleTimelineFilter,
-        timelineStats
+        timelineStats,
+        filteredTimeline,
     }
     return (
         <Context.Provider value={data}>

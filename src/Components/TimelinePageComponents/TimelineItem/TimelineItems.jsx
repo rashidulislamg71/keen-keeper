@@ -5,13 +5,8 @@ import { useLoaderData } from 'react-router-dom';
 import { findData } from '../../../utils/DataFind';
 
 function TimelineItems() {
-    const { timeline, filterTimeline } = useContext(Context);
+    const { filteredTimeline } = useContext(Context);
     const friendsData = useLoaderData();
-
-    const filteredTimeline = timeline.filter(item => {
-    if (filterTimeline === "all") return true;
-    return item.type === filterTimeline;
-});
 
     return (
         <div className='md:mt-10 mt-5'>

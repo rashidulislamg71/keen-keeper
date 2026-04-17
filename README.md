@@ -1,12 +1,85 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# KeenKeeper — Keep Your Friendships Alive (demo practice project)
 
-Currently, two official plugins are available:
+# Project Name
+- KeenKeeper 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live Link:
+- https://keen-keeper-ecru-alpha.vercel.app/
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📸 Screenshot
+
+![App Screenshot](/public/keenKeeperHomePage.png)
+
+![App Screenshot](/public/KeenKeeperDetailsPage.png)
+
+![App Screenshot](/public/KeenKeeperStatsPage.png)
+
+---
+
+---
+
+## 📖 Description
+KeenKeeper is a modern friendship management web application that helps users keep track of their relationships. It allows users to monitor communication, set goals, and maintain meaningful connections with friends through structured timelines and analytics.
+
+---
+
+---
+
+## 🧩 Features 
+1. 👫 Friend Management
+- Responsive Grid Layout: View all friends in a clean, card-based interface that works on mobile, tablet, and desktop.
+
+- Status Indicators: Every friend card displays their photo, name, tags, and a color-coded status based on contact delay.
+
+- Detailed Profiles: Click any card to access a deep-dive profile including bios and specific relationship goals.
+
+2. ⚡ Quick Interaction Logging
+- One-Tap Actions: Dedicated buttons for Call, Text, and Video interactions.
+
+- Instant Updates: Clicking a button automatically updates the interaction timeline without refreshing.
+
+- Real-time Feedback: Integrated toast notifications confirm every action taken by the user.
+
+3. 📜 Timeline Tracking
+- Chronological Logs: A structured history of all interactions, complete with dates, specific icons, and titles.
+
+- Smart Filtering: Easily filter your history by interaction type (Call / Text / Video) to review your habits.
+
+4. 📊 Friendship Analytics
+- Visual Data: A beautiful Pie Chart visualization powered by Recharts on the Stats page.
+
+- Pattern Recognition: Helps you understand your communication preferences at a glance.
+
+---
+
+---
+
+## 🔔 Additional Features
+- Loading animation while fetching data
+- Active navbar highlighting
+- Toast notifications for interactions
+
+---
+
+---
+
+## 🛠️ Technologies Used
+- **Core:** React.js (v19)
+- **Navigation:** React Router Dom
+- **Styling:** Tailwind CSS & DaisyUI
+- **Icons:** React Icons
+- **Notifications:** React-Toastify
+- **Data Handling:** JSON (Loader, useLoaderData() Fetching)
+- **Chart:** Recharts (For Friendship Analytics)
+- **Deployment:** Vercel 
+
+---
+
+---
+
+## 👨‍💻 Author
+
+- Name: Md. Rashidul Islam  
+- GitHub: https://github.com/rashidulislamg71 
